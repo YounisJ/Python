@@ -15,6 +15,7 @@ def btnClicked(number):
 
 
 
+
 btn1 = Button(rootwindow, text="1",padx=40,pady=20,command=lambda: btnClicked(1))
 btn2 = Button(rootwindow, text="2",padx=40,pady=20,command=lambda: btnClicked(2))
 btn3 = Button(rootwindow, text="3",padx=40,pady=20,command=lambda: btnClicked(3))
