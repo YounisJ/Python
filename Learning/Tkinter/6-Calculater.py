@@ -22,6 +22,9 @@ btn8 = Button(rootwindow, text="8",padx=40,pady=20,command=button_add)
 btn9 = Button(rootwindow, text="9",padx=40,pady=20,command=button_add)
 
 btn0 = Button(rootwindow, text="0",padx=40,pady=20,command=button_add)
+btnclear = Button(rootwindow, text="clear",padx=78,pady=20,command=button_add)
+btnadd = Button(rootwindow, text="+",padx=39,pady=20,command=button_add)
+btnequal = Button(rootwindow, text="=",padx = 86,pady=20,command=button_add)
 
 btn1.grid(row=3, column=0)
 btn2.grid(row=3, column=1)
@@ -36,6 +39,9 @@ btn8.grid(row=1, column=1)
 btn9.grid(row=1, column=2)
 
 btn0.grid(row=4, column=0)
+btnclear.grid(row=4, column=1, columnspan=3)
+btnadd.grid(row=5, column=0)
+btnequal.grid(row=5, column=1, columnspan=3)
 
 
 
