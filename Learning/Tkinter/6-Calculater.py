@@ -7,14 +7,9 @@ txtinput = Entry(rootwindow, width=35, borderwidth=5)
 txtinput.grid(row=0,column=0, columnspan=3, padx=10, pady=10)
 
 def btnClicked(number):
-    # prevnum = txtinput.get()
     # txtinput.delete(0, END)
     txtinput.insert(0, number)
-    # if number>9:
-    #     txtinput.delete(0, END)
-    #     txtinput.insert(0, prevnum+number)
-        
-        
+   
 
 
 btn1 = Button(rootwindow, text="1",padx=40,pady=20,command=lambda: btnClicked(1))
