@@ -9,7 +9,8 @@ txtinput.grid(row=0,column=0, columnspan=3, padx=10, pady=10)
 def btnClicked(number):
     # txtinput.delete(0, END)
     txtinput.insert(0, number)
-   
+
+
 
 btn1 = Button(rootwindow, text="1",padx=40,pady=20,command=lambda: btnClicked(1))
 btn2 = Button(rootwindow, text="2",padx=40,pady=20,command=lambda: btnClicked(2))
