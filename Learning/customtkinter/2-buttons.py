@@ -4,9 +4,14 @@ from customtkinter import *
 set_default_color_theme("green")
 
 rootwindow = CTk()
+rootwindow.geometry('600x400')
+# define helloworld fuunction
+def  hello():
+    lblhello = CTkLabel(rootwindow, text="Hello World!!!")
+    lblhello.pack()
 
-button = CTkButton(rootwindow, text="Helloword!!", corner_radius=20)
-button.pack(pady = 60)
-
+#create button
+btnhello = CTkButton(rootwindow, text="Say Hello", command=hello)
+btnhello.pack(pady= 20)
 
 rootwindow.mainloop()
