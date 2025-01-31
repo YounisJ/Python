@@ -5,12 +5,9 @@ rootwindow.title("Entry Widgets")
 rootwindow.geometry('500x300')
 
 def submit():
-    lblhello = CTkLabel(
-        rootwindow,
-        font=("Helvetica", 20),
-        text="Hello Mr. " + txtInput.get()
-    )
-    lblhello.pack(pady=10)
+    if txtInput.get() == "":
+        else:
+
 
 btnsubmit = CTkButton(
     rootwindow,
