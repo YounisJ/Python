@@ -6,7 +6,16 @@ rootwindow.geometry('500x300')
 
 def submit():
     if txtInput.get() == "":
-        else:
+        print("No text in the text field")
+    else:
+        lblhello = CTkLabel(
+        rootwindow,
+        font=("Helvetica", 20),
+        text="Hello Mr. " + txtInput.get()
+        )
+        lblhello.pack(pady=10)
+        txtInput.delete(0,END)
+
 
 
 btnsubmit = CTkButton(
