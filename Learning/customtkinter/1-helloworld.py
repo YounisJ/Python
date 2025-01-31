@@ -1,22 +1,16 @@
-import customtkinter
+from customtkinter import *
 
 #Theme setting
-customtkinter.set_appearance_mode("dark")
-customtkinter.set_default_color_theme("green")
+set_appearance_mode("dark")
+set_default_color_theme("green")
 
 # creating root window
-rootwindow = customtkinter.CTk()
+rootwindow = CTk()
 rootwindow.title("HelloWorld")
 rootwindow.geometry('600x400')
 
-# define helloworld fuunction
-def  hello():
-    lblhello = customtkinter.CTkLabel(rootwindow, text="Hello World!!!")
-    lblhello.pack()
-
-#create button
-btnhello = customtkinter.CTkButton(rootwindow, text="Say Hello", command=hello)
-btnhello.pack(pady= 20)
+lblHello= CTkLabel(rootwindow, text="Hello World!!")
+lblHello.pack(pady = 60)
 
 #main window check regularly
 rootwindow.mainloop()
