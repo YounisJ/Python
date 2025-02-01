@@ -6,21 +6,18 @@ app.geometry('300x500')
 
 ###############
 def sendnum(number):
-    txtinput = CTkEntry(
+    txtinput.insert(END, number)
+
+txtinput = CTkEntry(
     app,
-    
     placeholder_text="Calculater",
     height=50,
     width=250,
     font=("", 20),
-    corner_radius=10,
-    
-    # state=DISABLED
+    corner_radius=10
     )
-    # txtinput.pack(pady=20)
-    txtinput.grid(row=0,column=0, columnspan=5, padx=25, pady = 25)
 
-
+txtinput.grid(row=0,column=0, columnspan=5, padx=25, pady = 25)
 
 btn_1 = CTkButton(app, text="1", height=50, width=50, corner_radius=60, command=lambda: sendnum(1))
 btn_2 = CTkButton(app, text="2", height=50, width=50, corner_radius=60, command=lambda: sendnum(2))
