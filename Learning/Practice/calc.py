@@ -25,6 +25,7 @@ def getnum1():
     txtinput.delete(0, END)
     return num1
 
+
 print(getnum1)
 # def sum(num1):
 #     num2 = int(txtinput.get())
