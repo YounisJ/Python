@@ -53,7 +53,6 @@ btn_add = CTkButton(app, text="+", height=60, width=60, corner_radius=60, comman
 btn_equal = CTkButton(app, text="=", height=60, width=60, corner_radius=60)
 
 
-
 btn_9.grid(row=1,column=2, padx= 17, pady = 17)
 btn_8.grid(row=1,column=1, padx= 17, pady = 17)
 btn_7.grid(row=1,column=0, padx= 17, pady = 17)
