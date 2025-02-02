@@ -1,7 +1,7 @@
 from customtkinter import *
 
 app = CTk()
-app.title("Calculater")
+app.title("Calculator")
 app.geometry('300x560')
 
 ###############
@@ -10,7 +10,7 @@ def sendnum(number):
 
 txtinput = CTkEntry(
     app,
-    placeholder_text="Calculater",
+    placeholder_text="Calculator",
     height=50,
     width=250,
     font=("helvetica", 20),
@@ -25,11 +25,12 @@ def getnum1():
     txtinput.delete(0, END)
     return num1
 
-def sum(num1):
-    num2 = int(txtinput.get())
-    sum = num1 + num2
-    txtinput.delete(0, END)
-    txtinput.insert(0,sum)
+print(getnum1)
+# def sum(num1):
+#     num2 = int(txtinput.get())
+#     sum = num1 + num2
+#     txtinput.delete(0, END)
+#     txtinput.insert(0,sum)
 
     
 btn_1 = CTkButton(app, text="1", height=60, width=60, corner_radius=60, command=lambda: sendnum(1))
@@ -48,7 +49,7 @@ btn_0 = CTkButton(app, text="0", height=60, width=60, corner_radius=60, command=
 btn_clear = CTkButton(app, text="clear", height=60, width=60, corner_radius=60)
 
 btn_add = CTkButton(app, text="+", height=60, width=60, corner_radius=60, command=getnum1)
-btn_equal = CTkButton(app, text="=", height=60, width=60, corner_radius=60, command=sum(getnum1))
+btn_equal = CTkButton(app, text="=", height=60, width=60, corner_radius=60)
 
 
 btn_9.grid(row=1,column=2, padx= 17, pady = 17)
