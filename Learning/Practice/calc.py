@@ -4,71 +4,61 @@ app = CTk()
 app.title("Calculator")
 app.geometry('300x560')
 
-###############
+# Global variables for operations
+num1 = None
+operator = None
+
 def sendnum(number):
+    """ Inserts numbers into the input field """
     txtinput.insert(END, number)
 
-txtinput = CTkEntry(
-    app,
-    placeholder_text="Calculator",
-    height=50,
-    width=250,
-    font=("helvetica", 20),
-    corner_radius=10
-    )
+def getnum1(op):
+    """ Stores first number and operation, then clears input field """
+    global num1, operator
+    num1 = int(txtinput.get())  # Store first number
+    operator = op  # Store the selected operator
+    txtinput.delete(0, END)  # Clear input for next number
 
-txtinput.grid(row=0,column=0, columnspan=5, padx=25, pady = 25)
-# num1 = 0
-def getnum1():
-    global num1
-    num1 = int(txtinput.get())
+def evaluate():
+    """ Performs the calculation and displays result """
+    global num1, operator
+    num2 = int(txtinput.get())  # Get second number
+    txtinput.delete(0, END)  # Clear input field
+
+    if operator == "+":
+        result = num1 + num2
+        txtinput.insert(END, result)  # Display result
+
+def clear():
+    """ Clears the input field and resets stored values """
+    global num1, operator
     txtinput.delete(0, END)
-    return num1
+    num1 = None
+    operator = None
 
+# Input field
+txtinput = CTkEntry(app, placeholder_text="Calculator", height=50, width=250, font=("helvetica", 20), corner_radius=10)
+txtinput.grid(row=0, column=0, columnspan=5, padx=25, pady=25)
 
-print(getnum1)
-# def sum(num1):
-#     num2 = int(txtinput.get())
-#     sum = num1 + num2
-#     txtinput.delete(0, END)
-#     txtinput.insert(0,sum)
+# Number buttons
+buttons = [
+    ("7", 1, 0), ("8", 1, 1), ("9", 1, 2),
+    ("4", 2, 0), ("5", 2, 1), ("6", 2, 2),
+    ("1", 3, 0), ("2", 3, 1), ("3", 3, 2),
+    ("0", 4, 0)
+]
 
-    
-btn_1 = CTkButton(app, text="1", height=60, width=60, corner_radius=60, command=lambda: sendnum(1))
-btn_2 = CTkButton(app, text="2", height=60, width=60, corner_radius=60, command=lambda: sendnum(2))
-btn_3 = CTkButton(app, text="3", height=60, width=60, corner_radius=60, command=lambda: sendnum(3))
+for (text, row, col) in buttons:
+    btn = CTkButton(app, text=text, height=60, width=60, corner_radius=60, command=lambda t=text: sendnum(t))
+    btn.grid(row=row, column=col, padx=17, pady=17)
 
-btn_4 = CTkButton(app, text="4", height=60, width=60, corner_radius=60, command=lambda: sendnum(4))
-btn_5 = CTkButton(app, text="5", height=60, width=60, corner_radius=60, command=lambda: sendnum(5))
-btn_6 = CTkButton(app, text="6", height=60, width=60, corner_radius=60, command=lambda: sendnum(6))
+# Operator buttons
+btn_add = CTkButton(app, text="+", height=60, width=60, corner_radius=60, command=lambda: getnum1("+"))
+btn_equal = CTkButton(app, text="=", height=60, width=60, corner_radius=60, command=evaluate)
+btn_clear = CTkButton(app, text="C", height=60, width=60, corner_radius=60, command=clear)
 
-btn_7 = CTkButton(app, text="7", height=60, width=60, corner_radius=60, command=lambda: sendnum(7))
-btn_8 = CTkButton(app, text="8", height=60, width=60, corner_radius=60, command=lambda: sendnum(8))
-btn_9 = CTkButton(app, text="9", height=60, width=60, corner_radius=60, command=lambda: sendnum(9))
+btn_add.grid(row=5, column=0, padx=5, pady=17)
+btn_equal.grid(row=5, column=1, padx=5, pady=17)
+btn_clear.grid(row=4, column=1, padx=5, pady=17)
 
-btn_0 = CTkButton(app, text="0", height=60, width=60, corner_radius=60, command=lambda: sendnum(0))
-btn_clear = CTkButton(app, text="clear", height=60, width=60, corner_radius=60)
-
-btn_add = CTkButton(app, text="+", height=60, width=60, corner_radius=60, command=getnum1)
-btn_equal = CTkButton(app, text="=", height=60, width=60, corner_radius=60)
-
-
-btn_9.grid(row=1,column=2, padx= 17, pady = 17)
-btn_8.grid(row=1,column=1, padx= 17, pady = 17)
-btn_7.grid(row=1,column=0, padx= 17, pady = 17)
-
-btn_6.grid(row=2,column=2, padx= 17, pady = 17)
-btn_5.grid(row=2,column=1, padx= 17, pady = 17)
-btn_4.grid(row=2,column=0, padx= 17, pady = 17)
-
-btn_3.grid(row=3,column=2, padx= 17, pady = 17)
-btn_2.grid(row=3,column=1, padx= 17, pady = 17)
-btn_1.grid(row=3,column=0, padx= 17, pady = 17)
-
-btn_0.grid(row=4,column=0, padx= 17, pady = 17)
-btn_clear.grid(row=4,column=1, padx= 5, pady = 17)
-
-btn_add.grid(row=5,column=0, padx= 5, pady = 17)
-btn_equal.grid(row=5,column=1, padx= 5, pady = 17)
-
-app .mainloop()
+app.mainloop()
