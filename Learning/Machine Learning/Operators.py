@@ -19,8 +19,5 @@ print(x%y)
 # ** Exponential / Power
 print(x**y)
 
-# // Floor Division 
+# // Floor Division/result of a division operation to the nearest integer
 print(x//y)
-
-
-
