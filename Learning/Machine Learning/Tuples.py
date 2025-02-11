@@ -12,4 +12,3 @@ fruits = ("Apple","Orange","Banana")
 
 
 
-
