@@ -7,3 +7,4 @@ fruits = ("Apple","Orange","Banana")
 # print(len(fruits)) # check out the length of the collection
 # print("Apple" in fruits) # check whether this exist in out collection
 
+
