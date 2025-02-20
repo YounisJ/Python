@@ -23,4 +23,3 @@ print("Apple" in fruits) # check whether this exist in out collection
 
 
 
-
